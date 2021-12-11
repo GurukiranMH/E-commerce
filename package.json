@@ -1,0 +1,39 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "engines": {
+    "node":"16.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production MONGO_USER=Gurukiran MONGO_PASSWORD=guru007@ MONGO_DEFAULT_DATABASE=shop STRIPE_KEY=sk_test_51K2z2FSCcoys1M7c1lhNc1Hl8XIt4jmB1P5MhymdlGJmsEzNjXmMIhlA2muX6iPs83aW2HxxHFljx63fhb3CrCj500J0rqb0YW node app.js",
+    "start-server": "node app.js",
+    "start:dev": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^3.1.1",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.13.0",
+    "helmet": "^4.6.0",
+    "mongodb": "^4.1.3",
+    "mongoose": "^6.0.12",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.7.0",
+    "pdfkit": "^0.13.0",
+    "stripe": "^8.191.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}

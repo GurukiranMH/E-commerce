@@ -1,0 +1,66 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <% if(errorMessage) { %> 
+            <div class="user-message user-message--error"><%= errorMessage %> </div>
+            <% }  %> 
+        <form class="login-form" action="/signup" method="POST" novalidate>
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input 
+                    class="<%=validationErrors.find(e=>e.param === 'email') ? 'invalid': '' %>" 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<%=oldInput.email  %>"
+                >
+                <!-- <% if(errorMessage) { %> 
+                    <p 
+                        class="<%=validationErrors.find(e=>e.param === 'email') ? 'invalid': '' %>">
+                        <%=validationErrors.find(e=> e.msg === 'E-mail exists already ,please pick a different one'
+                        ) ? 'E-mail exists already ,please pick a different one' : '' %>
+                    </p>
+                <% } %>  -->
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input 
+                    class="<%=validationErrors.find(e=>e.param === 'password') ? 'invalid': '' %>" 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    value="<%=oldInput.password  %>"
+                >
+                <!-- <% if(errorMessage) { %> 
+                    <p 
+                        class="<%=validationErrors.find(e=>e.param === 'password') ? 'invalid': '' %>">
+                        <%=validationErrors.find(e=> e.msg === 'Please enter a valid password with atleast 5 characters' 
+                        ) ? 'Please enter a valid password with atleast 5 characters' : '' %>
+                    </p>
+                <% } %>  -->
+            </div>
+            <div class="form-control">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    class="<%=validationErrors.find(e=>e.param === 'confirmPassword') ? 'invalid': '' %>" 
+                    type="password" name="confirmPassword" id="confirmPassword" value="<%=oldInput.confirmPassword  %>"
+                >
+                <!-- <% if(errorMessage) { %> 
+                    <p 
+                        class="<%=validationErrors.find(e=>e.param === 'confirmPassword') ? 'invalid': '' %>">
+                        <%=validationErrors.find(e=> e.msg=== 'passwords have to match!' 
+                        ) ? 'passwords have to match!' : '' %>
+                    </p>
+                <% } %>  -->
+            </div>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn" type="submit">SignUp</button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>
