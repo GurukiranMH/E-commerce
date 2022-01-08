@@ -58,7 +58,7 @@ const accessLogStream = fs.createWriteStream(
   { flags: 'a' }
 );
 
-app.use(helmet());
+// app.use(helmet());
 app.use(compression());
 app.use(morgan('combined', { stream: accessLogStream }));
 
@@ -122,6 +122,20 @@ app.use((error, req, res, next) => {
     isAuthenticated: req.session.isLoggedIn,
   });
 });
+
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      useDefaults: true,
+      directives: {
+        connectSrc: ["'self'", 'https://js.stripe.com'],
+        scriptSrc: ["'self'", "'unsafe-inline'", 'https://js.stripe.com'],
+        frameSrc: ["'self'", 'https://js.stripe.com'],
+        scriptSrcAttr: ["'unsafe-inline'"],
+      },
+    },
+  })
+);
 
 mongoose
   .connect(MONGODB_URI)

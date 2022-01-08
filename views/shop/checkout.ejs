@@ -24,6 +24,7 @@
           var stripe = Stripe('pk_test_51K2z2FSCcoys1M7ct8Nu8ZUbBuicYfcg5NiiiAU2C9ImlfpQOnKuDFzViC0KGQRXC3cFG5L4daKDAvWi4HBP6Nqe00oj3DQVIv');
           var orderbtn = document.getElementById('order-btn');
           orderbtn.addEventListener('click',function(){
+            console.log('clicked');
             stripe.redirectToCheckout({
               sessionId: '<%= sessionId %>',
             })

@@ -4,11 +4,11 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node":"16.7.0"
+    "node": "16.7.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production MONGO_USER=Gurukiran MONGO_PASSWORD=guru007@ MONGO_DEFAULT_DATABASE=shop STRIPE_KEY=sk_test_51K2z2FSCcoys1M7c1lhNc1Hl8XIt4jmB1P5MhymdlGJmsEzNjXmMIhlA2muX6iPs83aW2HxxHFljx63fhb3CrCj500J0rqb0YW node app.js",
+    "start": "NODE_ENV=production MONGO_USER=mongodb_User_Name MONGO_PASSWORD=mongodb_Password_Name MONGO_DEFAULT_DATABASE=mongodb_Database_Name STRIPE_KEY=Stripe_key node app.js",
     "start-server": "node app.js",
     "start:dev": "nodemon app.js"
   },
