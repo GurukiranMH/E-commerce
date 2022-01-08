@@ -6,7 +6,7 @@ After downloading this project
 
 npm init
 
-then it will install all the node_modules packages and packages in package.json file
+then create package.json file
 
 **To use you need to edit 2 files**
 
@@ -23,4 +23,5 @@ In nodemon.json -->replace the above mentioned values
 # To run
 
 1. npm install
+2. it will install all the packages in package.json and node_modules
    2.npm run start:dev or npm start
