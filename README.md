@@ -24,4 +24,4 @@ In nodemon.json -->replace the above mentioned values
 
 1. npm install
 2. it will install all the packages in package.json and node_modules
-   2.npm run start:dev or npm start
+3. npm run start:dev or npm start
